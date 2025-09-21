@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Mentor | Profile card component</title>
+  <!-- Google Fonts: Kumbh Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --dark-cyan: hsl(185, 75%, 39%);
+      --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+      --dark-grayish-blue: hsl(227, 10%, 46%);
+      --light-grayish-blue: hsl(225, 10%, 92%);
+    }
+
+    body {
+      font-family: 'Kumbh Sans', sans-serif;
+      background-color: var(--dark-cyan);
+      color: var(--very-dark-desaturated-blue);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Background circles */
+    body::before,
+    body::after {
+      content: '';
+      position: absolute;
+      width: 978px;
+      height: 978px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    body::before {
+      top: -500px;
+      left: -300px;
+    }
+
+    body::after {
+      bottom: -500px;
+      right: -300px;
+    }
+
+    /* Profile card container */
+    .card {
+      background-color: white;
+      border-radius: 15px;
+      text-align: center;
+      width: 350px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+      height: 140px;
+      background-color: var(--dark-cyan);
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      background-size: cover;
+      position: relative;
+    }
+
+    .profile-pic-container {
+      position: absolute;
+      bottom: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profile-pic {
+      border-radius: 50%;
+      border: 5px solid white;
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding-top: 70px; /* Space for the profile picture */
+      padding-bottom: 25px;
+      border-bottom: 1px solid var(--light-grayish-blue);
+    }
+
+    .profile-name {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .profile-name span {
+      font-weight: 400;
+      color: var(--dark-grayish-blue);
+      margin-left: 5px;
+    }
+
+    .profile-location {
+      font-size: 16px;
+      color: var(--dark-grayish-blue);
+      margin-top: 8px;
+      margin-bottom: 25px;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-around;
+      padding: 25px 0;
+    }
+
+    .stats-item h2 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .stats-item p {
+      font-size: 14px;
+      color: var(--dark-grayish-blue);
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .attribution a {
+      color: var(--dark-grayish-blue);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="card-header">
+      <div class="profile-pic-container">
+        <img src="images/image-victor.jpg" alt="Victor Crest" class="profile-pic">
+      </div>
+    </div>
+
+    <div class="card-body">
+      <h1 class="profile-name">
+        Victor Crest
+        <span>26</span>
+      </h1>
+      <p class="profile-location">London</p>
+    </div>
+
+    <footer class="card-footer">
+      <div class="stats-item">
+        <h2>80K</h2>
+        <p>Followers</p>
+      </div>
+      <div class="stats-item">
+        <h2>803K</h2>
+        <p>Likes</p>
+      </div>
+      <div class="stats-item">
+        <h2>1.4K</h2>
+        <p>Photos</p>
+      </div>
+    </footer>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
